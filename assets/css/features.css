@@ -1,0 +1,23 @@
+    /*feature*/
+    .features {
+        color: var(--c1c);
+        text-align: center;
+      }
+  
+      .features h3 {
+        margin: var(--z) var(--z);
+      }
+  
+      .feature-item {
+        display: inline-block;
+        margin: var(--pdm) var(--pdm);
+        background: var(--c1);
+        padding: var(--z) var(--z);
+        width: 280px;
+      }
+  
+      .feature-item p {
+        padding: var(--z) var(--z);
+      }
+  
+      /*end feature*/

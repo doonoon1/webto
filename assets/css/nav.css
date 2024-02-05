@@ -1,0 +1,101 @@
+    /*-------------------------------------*/
+    /*nav*/
+    /* .ontopfix { position: fixed; top: 0; left: 0; width: 100%; z-index: 999; } */
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: var(--g8);
+        padding-right: var(--g8);
+        color: var(--fc1);
+        font-family: var(--fr4), var(--frd1);
+        font-size: var(--fz1);
+        transition: ease-in-out 0.5s;
+      }
+  
+      nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        float: right;
+        display: flex;
+        transition: ease-in-out 0.5s;
+      }
+  
+      nav ul li {
+        display: inline-block;
+        margin-left: var(--pdm);
+      }
+  
+      nav ul li a {
+        text-decoration: none;
+        color: var(--fc1);
+      }
+  
+      .logo-container {
+        display: flex;
+        align-items: center;
+        font-family: var(--fr1), var(--frd1);
+        font-size: var(--fz4);
+      }
+  
+      .hamburger-icon {
+        display: none;
+        cursor: pointer;
+        margin-left: 10px;
+        font-size: var(--fz2);
+      }
+  
+      /* Adjust the size of your logo */
+      /* Adjust the spacing between logo and slogan */
+      /* .logo-container img { max-width: 50px; margin-right: 10px; } */
+      /* Responsive styles for tablets */
+      @media only screen and (max-width: 768px) {
+  
+        /* nav { flex-direction: column; text-align: center; font-size: var(--fz2); } .logo-container { margin-bottom: 10px; } 
+        nav ul { display: none; } nav ul li { display: block; margin: 10px 0; } 
+        .menu-open { display: flex; flex-direction: column; align-items: center; } .hamburger-icon { display: block; } */
+      }
+  
+      /* Responsive styles for mobile devices */
+      @media only screen and (max-width: 500px) {
+  
+        /* Center the navigation items */
+        nav ul li {
+          margin: 10px 0;
+          text-align: center;
+          font-size: var(--fz2);
+        }
+  
+        nav {
+          flex-direction: column;
+          text-align: center;
+          font-size: var(--fz2);
+        }
+  
+        .logo-container {
+          margin-bottom: 10px;
+        }
+  
+        nav ul {
+          display: none;
+        }
+  
+        nav ul li {
+          margin: 10px 0;
+          text-align: center;
+          font-size: var(--fz2);
+        }
+  
+        .menu-open {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+  
+        .hamburger-icon {
+          display: block;
+        }
+      }
+  
+      /*end nav*/

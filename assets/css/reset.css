@@ -1,0 +1,25 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  /*-------------------------------------*/
+  body {
+    font-family: var(--fr4), var(--frd1);
+    font-size: var(--fz1);
+    background-color: var(--bgc3);
+  }
+
+  header {
+    /* position: fixed; top: 0; left: 0; width: 100%; z-index: 999; */
+    background-color: var(--bgc1);
+    color: var(--fc1);
+    padding-top: var(--g32);
+    padding-bottom: var(--g8);
+  }
+  @media only screen and (max-width: 768px) {
+    header {
+      padding-top: var(--g8);
+    }
+  }

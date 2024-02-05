@@ -1,0 +1,15 @@
+
+#about {
+    background-color: var(--bgc2);
+    color: var(--c3);
+    padding: var(--pdm);
+    max-width: var(--maxww);
+    margin: 0 auto;
+  }
+
+  #about h2 {
+    text-align: center;
+    padding: var(--pdm);
+    margin-bottom: var(--pdm);
+    color: var(--c3);
+  }

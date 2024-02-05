@@ -1,0 +1,20 @@
+#showroom {
+    background-color: var(--bgc4);
+    color: var(--fc2);
+    padding: var(--pdl) var(--pdl);
+    left: 0px;
+    width: 50%;
+  }
+
+  #showroom h2 {
+    font-family: var(--fr1), var(--frd1);
+    font-size: var(--fz4);
+    text-align: left;
+    margin-bottom: var(--pdm);
+    color: var(--fc2);
+  }
+
+  #showroom span {
+    margin-top: var(--pdm);
+    color: var(--bgc1);
+  }
