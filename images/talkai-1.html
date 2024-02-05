@@ -1,0 +1,107 @@
+ChatGPT
+Enter a message to start a chat.
+
+
+You
+copy
+please write a html to load font Pirou, SourceHanSerifJP, Aleo from free resource online
+
+
+ChatGPT
+Sure! Here is an example of HTML code that loads the Pirou, SourceHanSerifJP, and Aleo fonts from free online resources:
+
+ 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Font Loading Example</title>
+    <style>
+        @font-face {
+            font-family: 'Pirou';
+            src: url('https://example.com/pirou-font.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'SourceHanSerifJP';
+            src: url('https://example.com/sourcehan-serif-jp.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'Aleo';
+            src: url('https://example.com/aleo-font.woff2') format('woff2');
+        }
+        body {
+            font-family: 'Aleo', sans-serif;
+        }
+        h1 {
+            font-family: 'Pirou', serif;
+        }
+        p {
+            font-family: 'SourceHanSerifJP', serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to My Website</h1>
+    <p>This is an example of loading custom fonts using HTML.</p>
+</body>
+</html>
+In the above code, we are using @font-face to define the font families for each font. Replace the https://example.com/ URLs with the actual URLs where you can find the font files.
+
+The body element is styled to use the 'Aleo' font as its default font-family. The h1 element is styled to use the 'Pirou' font, and the p element is styled to use the 'SourceHanSerifJP' font.
+
+Make sure to replace the URLs in the @font-face declarations with the correct URLs where you can find the font files you want to use.
+
+
+You
+please write a html to load font Pirou, SourceHanSerifJP, Aleo from free resource online and support for all device
+
+
+ChatGPT
+Sure! Here's an example of an HTML code snippet that demonstrates how to load the fonts "Pirou," "SourceHanSerifJP," and "Aleo" from free online resources, and ensures support for all devices:
+
+ 
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Font Loading Example</title>
+  <style>
+    @font-face {
+      font-family: 'Pirou';
+      src: url('https://example.com/fonts/pirou.woff2') format('woff2'),
+           url('https://example.com/fonts/pirou.woff') format('woff');
+      /* Add additional font formats or sources as needed */
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'SourceHanSerifJP';
+      src: url('https://example.com/fonts/sourcehanserifjp.woff2') format('woff2'),
+           url('https://example.com/fonts/sourcehanserifjp.woff') format('woff');
+      /* Add additional font formats or sources as needed */
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Aleo';
+      src: url('https://example.com/fonts/aleo.woff2') format('woff2'),
+           url('https://example.com/fonts/aleo.woff') format('woff');
+      /* Add additional font formats or sources as needed */
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    body {
+      font-family: 'Pirou', 'SourceHanSerifJP', 'Aleo', sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <h1>This is a heading using font Pirou</h1>
+  <p>This is a paragraph using font SourceHanSerifJP</p>
+  <h2>This is a sub-heading using font Aleo</h2>
+</body>
+</html>
+In this example, replace the URLs https://example.com/fonts/pirou.woff2, https://example.com/fonts/sourcehanserifjp.woff2, and https://example.com/fonts/aleo.woff2 with the actual URLs of the font files you wish to use. Additionally, you can add support for more font formats or sources if needed by specifying them in the @font-face declarations.
+
+Remember to store the font files (pirou.woff2, sourcehanserifjp.woff2, and aleo.woff2) and update the URLs accordingly.
