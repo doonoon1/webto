@@ -1,4 +1,3 @@
-<!-- Please write the code for a website in the style of Mike Kus. The website should have a clean, modern design with bold typography and minimalistic visuals. The layout should be responsive and optimized for mobile devices. Please incorporate elements of geometric shapes, strong color schemes, and a balance of negative space. The website should have a landing page, an about page, and a portfolio page showcasing previous work. This code provides the basic structure of a website inspired by Mike Kus's style. It includes a responsive layout and incorporates elements of bold typography, geometric shapes, strong color schemes, and negative space. You can replace the placeholder images (portfolio1.jpg, portfolio2.jpg, etc.) with your own project images to showcase your work. Remember to update the href attribute in the navigation links for each page (index.html, about.html, portfolio.html) to point to the correct file names. -->
 <!DOCTYPE html>
 <html>
 
@@ -12,17 +11,7 @@
 </head>
 
 <body>
-
-  <!-- 
-<h2>Key Features</h2> 
-<div class="feature-item"> 
-<img src="feature1.png" alt="Feature 1 Image"> 
-<h3>Feature 1</h3> 
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> 
-</div> -->
   <header>
-
-
 
     <div class="container">
 
@@ -280,54 +269,6 @@
       <p>© 2024 TOTO's Digital Space. All rights reserved.</p>
     </div>
   </footer>
-<script>
-    //------------------------------------ // slider js
-    let slideIndex = 1;
-    const slides = document.getElementsByClassName("slide");
-    const dots = document.getElementsByClassName("dot");
-    // Function to show a specific slide
-    function showSlides(n) {
-      if (n > slides.length) {
-        slideIndex = 1;
-      }
-      if (n < 1) {
-        slideIndex = slides.length;
-      } // Hide all slides
-      for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      } // Remove the "active" class from all dots
-      for (let i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-      }
-      // Display the current slide and mark its corresponding dot as active
-      slides[slideIndex - 1].style.display = "block";
-      dots[slideIndex - 1].className += " active";
-    }
-    // Function to advance to the next slide
-    function plusSlides(n) {
-      showSlides((slideIndex += n));
-    }
-    // Function to navigate to a specific slide
-    function currentSlide(n) {
-      showSlides((slideIndex = n));
-    }
-    // Automatically advance to the next slide every 3 seconds (3000 milliseconds)
-    setInterval(function() {
-      plusSlides(1);
-    }, 5000);
-    // Initialize the slider
-    showSlides(slideIndex);
-    // end slide
-    //------------------------------------
-    // nav
-    const hamburgerIcon = document.querySelector(".hamburger-icon");
-    const menu = document.querySelector("nav ul");
-    // Toggle menu on click
-    hamburgerIcon.addEventListener("click", () => {
-      menu.classList.toggle("menu-open");
-    }); // end nav
-</script>
-
+<script src="assets/js/main.js"></script>
 </body>
-
 </html>
