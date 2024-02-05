@@ -1,0 +1,925 @@
+<!-- Please write the code for a website in the style of Mike Kus. The website should have a clean, modern design with bold typography and minimalistic visuals. The layout should be responsive and optimized for mobile devices. Please incorporate elements of geometric shapes, strong color schemes, and a balance of negative space. The website should have a landing page, an about page, and a portfolio page showcasing previous work. This code provides the basic structure of a website inspired by Mike Kus's style. It includes a responsive layout and incorporates elements of bold typography, geometric shapes, strong color schemes, and negative space. You can replace the placeholder images (portfolio1.jpg, portfolio2.jpg, etc.) with your own project images to showcase your work. Remember to update the href attribute in the navigation links for each page (index.html, about.html, portfolio.html) to point to the correct file names. -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A portfolio page showcasing previous work</title>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Tangerine&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Arima+Madurai&display=swap");
+@import url(https://fonts.googleapis.com/css?family=Amatic+SC);
+
+    :root {
+      --c1: #232220;
+      --c2: #eae6db;
+      --c3: #d4cec2;
+      --c4: #FFFFFF;
+      --c5: #000000; 
+      
+      --c1c: #e9e4dd;
+
+      --bgc1: var(--c1);
+      --bgc2: var(--c2);
+      --bgc3: var(--c3);
+      --bgc4: #FFFFFF;
+      --fc1: var(--c2);
+      --fc2: var(--c1);
+      --fcw: var(--c4);
+      --fcb: var(--c2);
+      --frd1: serif;
+      --frd2: sans-serif;
+      --fr1: "Tangerine";
+      --fr2: "Great Vibes";
+      --fr3: "Times New Roman";
+      --fr4: "Arima Madurai";
+      --fr5: "Amatic SC";
+      --fzt: 9px;
+      --fzs: 12px;
+      --fz1: 13px;
+      --fz2: 16px;
+      --fz3: 24px;
+      --fz4: 32px;
+      --fz5: 60px;
+      --pdxl: 60px;
+      --pdl: 30px;
+      --pdm: 10px;
+      --pds: 5px;
+      --g32: 32px;
+      --g15: 15px;
+      --g8: 8px;
+      --z: 0px;
+      --maxw: 1024px;
+      --maxww: 1280px;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    /*-------------------------------------*/
+    body {
+      font-family: var(--fr4), var(--frd1);
+      font-size: var(--fz1);
+      background-color: var(--bgc3);
+    }
+
+    header {
+      /* position: fixed; top: 0; left: 0; width: 100%; z-index: 999; */
+      background-color: var(--bgc1);
+      color: var(--fc1);
+      padding-top: var(--g32);
+      padding-bottom: var(--g8);
+    }
+    @media only screen and (max-width: 768px) {
+      header {
+        padding-top: var(--g8);
+      }
+    }
+
+    /*-------------------------------------*/
+    /*nav*/
+    /* .ontopfix { position: fixed; top: 0; left: 0; width: 100%; z-index: 999; } */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-left: var(--g8);
+      padding-right: var(--g8);
+      color: var(--fc1);
+      font-family: var(--fr4), var(--frd1);
+      font-size: var(--fz1);
+      transition: ease-in-out 0.5s;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      float: right;
+      display: flex;
+      transition: ease-in-out 0.5s;
+    }
+
+    nav ul li {
+      display: inline-block;
+      margin-left: var(--pdm);
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: var(--fc1);
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      font-family: var(--fr1), var(--frd1);
+      font-size: var(--fz4);
+    }
+
+    .hamburger-icon {
+      display: none;
+      cursor: pointer;
+      margin-left: 10px;
+      font-size: var(--fz2);
+    }
+
+    /* Adjust the size of your logo */
+    /* Adjust the spacing between logo and slogan */
+    /* .logo-container img { max-width: 50px; margin-right: 10px; } */
+    /* Responsive styles for tablets */
+    @media only screen and (max-width: 768px) {
+
+      /* nav { flex-direction: column; text-align: center; font-size: var(--fz2); } .logo-container { margin-bottom: 10px; } 
+      nav ul { display: none; } nav ul li { display: block; margin: 10px 0; } 
+      .menu-open { display: flex; flex-direction: column; align-items: center; } .hamburger-icon { display: block; } */
+    }
+
+    /* Responsive styles for mobile devices */
+    @media only screen and (max-width: 500px) {
+
+      /* Center the navigation items */
+      nav ul li {
+        margin: 10px 0;
+        text-align: center;
+        font-size: var(--fz2);
+      }
+
+      nav {
+        flex-direction: column;
+        text-align: center;
+        font-size: var(--fz2);
+      }
+
+      .logo-container {
+        margin-bottom: 10px;
+      }
+
+      nav ul {
+        display: none;
+      }
+
+      nav ul li {
+        margin: 10px 0;
+        text-align: center;
+        font-size: var(--fz2);
+      }
+
+      .menu-open {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .hamburger-icon {
+        display: block;
+      }
+    }
+
+    /*end nav*/
+    /*-------------------------------------*/
+    /*slider css*/
+    /* flex-direction: row row-reverse column column-reverse object-fit: fill contain cover none scale-down align-items: stretch center start end 
+
+  justify-content: center;
+  text-align: center;
+*/
+    .slider-container {
+      width: 100%;
+      position: relative;
+      background-color: none;
+      color: var(--fc1);
+    }
+
+    .slide {
+      width: 100%;
+      display: none;
+    }
+
+    .slide-content {
+      position: absolute;
+      bottom: 7px;
+      right: 0;
+      z-index: 5;
+      width: 25%;
+      height: 90%;
+      display: flex;
+      flex-direction: column;
+      padding: var(--pdl) var(--pdl);
+      background-color: var(--bgc1);
+    }
+
+    .slide-image {
+      width: 100%;
+      /*height: auto;*/
+      /*height: 100vh;*/
+      height: 460px;
+      object-fit: cover;
+      transition: ease-in-out 0.5s;
+    }
+
+    .slide-title {
+      /*width: 100%;*/
+      font-family: var(--fr5), var(--frd1);
+      font-size: var(--fz3);
+      letter-spacing: 5px;
+      line-height: 1;
+      text-transform: capitalize;
+      text-align: center;
+    }
+
+    .slide-desc {
+      /*width: 100%;*/
+      /*max-width: 50rem;*/
+      padding: var(--pdl) var(--z);
+      font-size: var(--fzs);
+      justify-content: center;
+    }
+
+    .slide-btn {
+      color: black;
+      background-color: white;
+      display: none;
+      /*display: flex;*/
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      border-radius: 0.5rem;
+      padding: 0.5rem 1rem;
+      text-transform: capitalize;
+      transition: ease 0.3s;
+    }
+
+    .slide-btn:hover {
+      gap: 2rem;
+    }
+
+    .slide-number-container {
+      position: absolute;
+      bottom: 1rem;
+      left: 1rem;
+      font-size: 1.5rem;
+      z-index: 5;
+      display: none;
+      /*display: flex;*/
+      gap: 0.5rem;
+      align-items: center;
+      color: rgba(211, 211, 211, 0.788);
+      letter-spacing: 0.2rem;
+    }
+
+    .slide-number-container hr {
+      width: 3rem;
+      transform: rotate(130deg);
+      border-color: rgba(211, 211, 211, 0.788);
+    }
+
+    .slider-nav {
+      position: absolute;
+      bottom: 1rem;
+      right: 1rem;
+      z-index: 5;
+      display: none;
+      /*display: flex;*/
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .slider-nav-btn {
+      cursor: pointer;
+      background-color: rgba(211, 211, 211, 0.226);
+      color: white;
+      font-size: 1.5rem;
+      padding: 0.5rem;
+      border-radius: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: ease 0.3s;
+    }
+
+    .slider-nav-btn:hover {
+      background-color: white;
+      color: black;
+    }
+
+    .dot-container {
+      position: absolute;
+      bottom: 1rem;
+      left: 0;
+      z-index: 4;
+      width: 100%;
+      display: none;
+      /*display: flex;*/
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .dot {
+      cursor: pointer;
+      height: 1rem;
+      width: 1rem;
+      background-color: rgba(211, 211, 211, 0.226);
+      border-radius: 50%;
+      display: inline-block;
+      transition: ease 0.3s;
+    }
+
+    .active,
+    .dot:hover {
+      background-color: white;
+    }
+
+    @media only screen and (max-width: 768px) {
+      .slide-content {
+        position: relative;
+        width: 100%;
+      }
+
+      .slide-image {
+        height: 480px;
+      }
+    }
+
+    @media only screen and (max-width: 480px) {
+      .slide-image {
+        height: 320px;
+      }
+    }
+
+    /*end slider*/
+    /*-------------------------------------*/
+    /*feature*/
+    .features {
+      color: var(--c1c);
+      text-align: center;
+    }
+
+    .features h3 {
+      margin: var(--z) var(--z);
+    }
+
+    .feature-item {
+      display: inline-block;
+      margin: var(--pdm) var(--pdm);
+      background: var(--c1);
+      padding: var(--z) var(--z);
+      width: 280px;
+    }
+
+    .feature-item p {
+      padding: var(--z) var(--z);
+    }
+
+    /*end feature*/
+    /*-------------------------------------*/
+    #portfolio {
+      color: var(--c1c);
+      margin-top: 24px;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      /*grid-gap: 0px;*/
+      gap: var(--pdm) var(--pdxl);
+    }
+
+    .portfolio-item {
+      overflow: hidden;
+      transition: all 0.3s;
+      text-align: center;
+    }
+
+    .portfolio-item-box {
+      background: var(--c1);
+      padding: var(--pdm) var(--pdl);
+    }
+
+    .portfolio-item-details {
+      margin: var(--pdl) var(--pdm);
+      text-align: left;
+      background: none;
+      padding: var(--pdl) var(--pds);
+      margin: var(--z) var(--z);
+    }
+
+    .portfolio-item img {
+      width: 100%;
+      height: auto;
+    }
+
+    .portfolio-item:hover {
+      /*transform: scale(1.1);*/
+    }
+
+    .portfolio-item h3 {
+      padding-top: 10px;
+      padding-bottom: 5px;
+      text-align: center;
+      font-family: var(--fr5), var(--frd1);
+      font-size: var(--fz3);
+      letter-spacing: 5px;
+      line-height: 1;
+    }
+
+    .portfolio-item span {
+      line-height: 0.7;
+      font-size: var(--fzt);
+    }
+
+    .portfolio-item p {
+      line-height: 1.2;
+      font-size: var(--fzs);
+    }
+
+    @media (max-width: 768px) {
+      .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .portfolio-grid {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+
+    /*-------------------------------------*/
+    /*-------------------------------------*/
+    .container {
+      max-width: var(--maxww);
+      margin: 0 auto;
+      padding: var(--pdm);
+    }
+
+    .container_full {
+      max-width: var(--maxww);
+      margin: 0 auto;
+    }
+
+    #logo {
+      text-align: left;
+      background-color: var(--bgc1);
+      color: var(--fc1);
+    }
+
+    #showroom {
+      background-color: var(--bgc4);
+      color: var(--fc2);
+      padding: var(--pdl) var(--pdl);
+      left: 0px;
+      width: 50%;
+    }
+
+    #showroom h2 {
+      font-family: var(--fr1), var(--frd1);
+      font-size: var(--fz4);
+      text-align: left;
+      margin-bottom: var(--pdm);
+      color: var(--fc2);
+    }
+
+    #showroom span {
+      margin-top: var(--pdm);
+      color: var(--bgc1);
+    }
+
+    #about {
+      background-color: var(--bgc2);
+      color: var(--c3);
+      padding: var(--pdm);
+      max-width: var(--maxww);
+      margin: 0 auto;
+    }
+
+    #about h2 {
+      text-align: center;
+      padding: var(--pdm);
+      margin-bottom: var(--pdm);
+      color: var(--c3);
+    }
+
+    #text_box_1 {
+      background-color: var(--bgc2);
+      color: var(--c3);
+      padding: var(--pdm);
+      max-width: var(--maxww);
+      margin: 0 auto;
+    }
+
+    #text_box_1 h2 {
+      text-align: center;
+      padding: var(--pdm);
+      margin-bottom: var(--pdm);
+    }
+    #text_box_1 p {
+      text-align: center;
+      padding: var(--pdm);
+      margin-bottom: var(--pdm);
+    }
+
+    #text_box_2 {
+      background-color: var(--bgc1);
+      color: var(--c3);
+      padding: var(--pdm);
+      max-width: var(--maxww);
+      margin: 0 auto;
+    }
+
+    #text_box_2 h2 {
+      text-align: center;
+      padding: var(--pdm);
+      margin-bottom: var(--pdm);
+    }
+    #text_box_2 p {
+      text-align: center;
+      padding: var(--pdm);
+      margin-bottom: var(--pdm);
+    }
+
+/*=======*/
+    .textbox_left {
+      background-color: var(--bgc4);
+      color: var(--fc2);
+      padding: var(--pdl) var(--pdl);
+      left: auto;
+      width: 50%;
+      position:absolute;
+    }
+
+    .textbox_left h2 {
+      font-family: var(--fr1), var(--frd1);
+      font-size: var(--fz4);
+      text-align: left;
+      color: var(--fc2);
+    }
+
+    #textbox_left span {
+      margin-top: var(--pdm);
+      color: var(--bgc1);
+    }
+
+
+    .textbox_right {
+      background-color: var(--bgc4);
+      color: var(--fc2);
+      padding: var(--pdl) var(--pdl);
+      left: 0px;
+      width:50%;
+      margin: auto 50%;
+      position:relative;
+      
+    }
+
+    .textbox_right h2 {
+      font-family: var(--fr1), var(--frd1);
+      font-size: var(--fz4);
+      text-align: left;
+      color: var(--fc2);
+    }
+
+    .textbox_right span {
+      margin-top: var(--pdm);
+      color: var(--bgc1);
+    }
+
+
+
+    footer {
+      background-color: #212121;
+      color: #fff;
+      text-align: center;
+      /*
+      padding: 20px;
+      */
+    }
+</style>
+</head>
+
+<body>
+
+  <!-- 
+<h2>Key Features</h2> 
+<div class="feature-item"> 
+<img src="feature1.png" alt="Feature 1 Image"> 
+<h3>Feature 1</h3> 
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> 
+</div> -->
+  <header>
+
+
+
+    <div class="container">
+
+      <nav id="nav_1">
+        <div class="logo-container">
+          <!-- <img src="logo.png" alt="Logo"/> --> <span class="logo">Minimalistic Visuals</span> <span class="slogan"></span>
+        </div>
+        <div class="hamburger-icon">☰</div>
+        <ul>
+          <li><a href="#">welcome</a></li>
+          <li><a href="#">about me</a></li>
+          <li><a href="#">services</a></li>
+          <li><a href="#">contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<!--
+  <section id="images">
+    <div class="container_full">
+      <img src="https://yaito.netlify.app/img/portfolio1.png" width="100%" />
+    </div>
+  </section>
+-->
+
+  <div class="container_full">
+    <!-- slider html-->
+    <div class="slider-container">
+      <div class="slide fade"> <img class="slide-image" src="https://yaito.netlify.app/img/portfolio1.png">
+        <div class="slide-content">
+          <h3 class="slide-title">title 1</h3>
+          <p class="slide-desc"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, necessitatibus.Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, necessitatibus.Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, necessitatibus. </p> <a href="" class="slide-btn"> button <ion-icon name="arrow-forward-circle"></ion-icon> </a>
+        </div>
+        <div class="slide-number-container">
+          <p class="slider-number">01</p>
+          <hr>
+          <p class="slider-number">06</p>
+        </div>
+      </div>
+      <div class="slide fade"> <img class="slide-image" src="https://yaito.netlify.app/img/portfolio2.png">
+        <div class="slide-content">
+          <h3 class="slide-title">title 2</h3>
+          <p class="slide-desc"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, necessitatibus. </p> <a href="" class="slide-btn"> button <ion-icon name="arrow-forward-circle"></ion-icon> </a>
+        </div>
+        <div class="slide-number-container">
+          <p class="slider-number">02</p>
+          <hr>
+          <p class="slider-number">06</p>
+        </div>
+      </div>
+      <div class="slide fade"> <img class="slide-image" src="https://yaito.netlify.app/img/portfolio3.png">
+        <div class="slide-content">
+          <h3 class="slide-title">title 3</h3>
+          <p class="slide-desc"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, necessitatibus. </p> <a href="" class="slide-btn"> button <ion-icon name="arrow-forward-circle"></ion-icon> </a>
+        </div>
+        <div class="slide-number-container">
+          <p class="slider-number">03</p>
+          <hr>
+          <p class="slider-number">06</p>
+        </div>
+      </div>
+      <div class="slide fade"> <img class="slide-image" src="https://yaito.netlify.app/img/portfolio4.png">
+        <div class="slide-content">
+          <h3 class="slide-title">title 4</h3>
+          <p class="slide-desc"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, necessitatibus. </p> <a href="" class="slide-btn"> button <ion-icon name="arrow-forward-circle"></ion-icon> </a>
+        </div>
+        <div class="slide-number-container">
+          <p class="slider-number">04</p>
+          <hr>
+          <p class="slider-number">06</p>
+        </div>
+      </div>
+      <div class="slide fade"> <img class="slide-image" src="https://yaito.netlify.app/img/portfolio5.png">
+        <div class="slide-content">
+          <h3 class="slide-title">title 5</h3>
+          <p class="slide-desc"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, necessitatibus. </p> <a href="" class="slide-btn"> button <ion-icon name="arrow-forward-circle"></ion-icon> </a>
+        </div>
+        <div class="slide-number-container">
+          <p class="slider-number">05</p>
+          <hr>
+          <p class="slider-number">06</p>
+        </div>
+      </div>
+      <div class="slide fade"> <img class="slide-image" src="https://yaito.netlify.app/img/portfolio6.png">
+        <div class="slide-content">
+          <h3 class="slide-title">title 6</h3>
+          <p class="slide-desc"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, necessitatibus. </p> <a href="" class="slide-btn"> button <ion-icon name="arrow-forward-circle"></ion-icon> </a>
+        </div>
+        <div class="slide-number-container">
+          <p class="slider-number">06</p>
+          <hr>
+          <p class="slider-number">06</p>
+        </div>
+      </div>
+
+      <!-- Next and previous buttons -->
+
+      <div class="slider-nav"> <a class="slider-nav-btn" onclick="plusSlides(-1)">
+          <ion-icon name="caret-back-outline"></ion-icon>
+        </a> <a class="slider-nav-btn" onclick="plusSlides(1)">
+          <ion-icon name="caret-forward-outline"></ion-icon>
+        </a> </div> <!-- The dots/circles -->
+      <div class="dot-container"> <span class="dot" onclick="currentSlide(1)"></span> <span class="dot" onclick="currentSlide(2)"></span> <span class="dot" onclick="currentSlide(3)"></span> </div>
+    </div> <!-- end slider -->
+  </div>
+  
+  
+
+
+  <section id="portfolio">
+    <div class="container">
+      <!-- <h2>Portfolio</h2> -->
+      <div class="portfolio-grid">
+        <div class="portfolio-item">
+          <div class="portfolio-item-box">
+            <h3>Feature</h3>
+            <span>sign</span>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+          <div class="portfolio-item-details">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <div class="portfolio-item-box">
+            <h3>Feature</h3>
+            <span>sign</span>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+          <div class="portfolio-item-details">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <div class="portfolio-item-box">
+            <h3>Feature</h3>
+            <span>sign</span>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+          <div class="portfolio-item-details">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <div class="portfolio-item-box">
+            <h3>Feature</h3>
+            <span>sign</span>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+          <div class="portfolio-item-details">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <div class="portfolio-item-box">
+            <h3>Feature</h3>
+            <span>sign</span>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+          <div class="portfolio-item-details">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <div class="portfolio-item-box">
+            <h3>Feature</h3>
+            <span>sign</span>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+          <div class="portfolio-item-details">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--
+  <section id="portfolio">
+    <div class="container">
+      <h2>Portfolio</h2>
+      <div class="portfolio-grid">
+        <div class="portfolio-item"> <img src="https://yaito.netlify.app/img/portfolio1.png" alt="Project 1"> </div>
+        <div class="portfolio-item"> <img src="https://yaito.netlify.app/img/portfolio2.png" alt="Project 2"> </div>
+        <div class="portfolio-item"> <img src="https://yaito.netlify.app/img/portfolio3.png" alt="Project 3"> </div>
+        <div class="portfolio-item"> <img src="https://yaito.netlify.app/img/portfolio4.png" alt="Project 4"> </div>
+        <div class="portfolio-item"> <img src="https://yaito.netlify.app/img/portfolio5.png" alt="Project 5"> </div>
+        <div class="portfolio-item"> <img src="https://yaito.netlify.app/img/portfolio6.png" alt="Project 6"> </div>
+      </div>
+    </div>
+  </section>
+-->
+  <!--
+  <section class="container features">
+    <div class="feature-item">
+      <h3>Feature 1</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+    <div class="feature-item">
+      <h3>Feature 2</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+    <div class="feature-item">
+      <h3>Feature 3</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+  </section>
+-->
+  
+  
+      <section id="text_box_2">
+      <h2>About Me</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at diam auctor, varius dolor et, tempor mi. Vestibulum hendrerit nunc eu justo laoreet, in iaculis orci tristique.</p>
+    </section>
+  
+  
+  <!--
+  <div class="container_full">
+    <section class="textbox_left">
+      <h2>textbox left</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at diam auctor, varius dolor et, tempor mi. Vestibulum hendrerit nunc eu justo laoreet, in iaculis orci tristique.</p>
+    </section>
+  </div>
+  
+  
+  <div class="container_full">
+    <section class="textbox_right">
+      <h2>textbox right</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at diam auctor, varius dolor et, tempor mi. Vestibulum hendrerit nunc eu justo laoreet, in iaculis orci tristique.</p>
+      <span>more...</span>
+    </section>
+  </div>
+  
+  <div class="container_full">
+    <section class="textbox_left">
+      <h2>textbox left</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at diam auctor, varius dolor et, tempor mi. Vestibulum hendrerit nunc eu justo laoreet, in iaculis orci tristique.</p>
+    </section>
+  </div>
+  
+  
+  <div class="container_full">
+    <section class="textbox_right">
+      <h2>textbox right</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at diam auctor, varius dolor et, tempor mi. Vestibulum hendrerit nunc eu justo laoreet, in iaculis orci tristique.</p>
+      <span>more...</span>
+    </section>
+  </div>
+-->
+
+
+  <footer>
+    <div class="container">
+      <p>© 2024 TOTO's Digital Space. All rights reserved.</p>
+    </div>
+  </footer>
+<script>
+    //------------------------------------ // slider js
+    let slideIndex = 1;
+    const slides = document.getElementsByClassName("slide");
+    const dots = document.getElementsByClassName("dot");
+    // Function to show a specific slide
+    function showSlides(n) {
+      if (n > slides.length) {
+        slideIndex = 1;
+      }
+      if (n < 1) {
+        slideIndex = slides.length;
+      } // Hide all slides
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      } // Remove the "active" class from all dots
+      for (let i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      // Display the current slide and mark its corresponding dot as active
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+    }
+    // Function to advance to the next slide
+    function plusSlides(n) {
+      showSlides((slideIndex += n));
+    }
+    // Function to navigate to a specific slide
+    function currentSlide(n) {
+      showSlides((slideIndex = n));
+    }
+    // Automatically advance to the next slide every 3 seconds (3000 milliseconds)
+    setInterval(function() {
+      plusSlides(1);
+    }, 5000);
+    // Initialize the slider
+    showSlides(slideIndex);
+    // end slide
+    //------------------------------------
+    // nav
+    const hamburgerIcon = document.querySelector(".hamburger-icon");
+    const menu = document.querySelector("nav ul");
+    // Toggle menu on click
+    hamburgerIcon.addEventListener("click", () => {
+      menu.classList.toggle("menu-open");
+    }); // end nav
+</script>
+
+</body>
+
+</html>
