@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GCHO EXCLUSIVE | CNP & LLAC Portal</title>
+    <style>
+        /* AWWWARDS-INSPIRED RESET & THEME */
+        :root {
+            --bg: #0d0d0d;
+            --surface: #1a1a1a;
+            --text: #e0e0e0;
+            --accent: #c5a358; /* Gold accent */
+            --error: #ff4d4d;
+            --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: var(--font-main);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* TYPOGRAPHY */
+        h1, h2 { font-weight: 300; text-transform: uppercase; letter-spacing: 4px; }
+        .lux-text { font-style: italic; font-family: serif; color: var(--accent); }
+
+        /* LAYOUT COMPONENTS */
+        header {
+            padding: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        main { min-height: 80vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; }
+
+        .container { width: 100%; max-width: 1200px; }
+
+        /* AUTH & CARDS */
+        .glass-panel {
+            background: var(--surface);
+            padding: 60px;
+            border-radius: 2px;
+            border: 1px solid rgba(255,255,255,0.05);
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+            transition: var(--transition);
+        }
+
+        .step-indicator { font-size: 0.8rem; color: var(--accent); margin-bottom: 20px; display: block; }
+
+        /* BUTTONS */
+        .btn {
+            background: none;
+            border: 1px solid var(--text);
+            color: var(--text);
+            padding: 15px 40px;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            position: relative;
+            transition: var(--transition);
+            overflow: hidden;
+            margin-top: 20px;
+        }
+
+        .btn:hover { background: var(--text); color: var(--bg); }
+        .btn:disabled { opacity: 0.3; cursor: not-allowed; }
+
+        /* SHOP SECTION (HIDDEN BY DEFAULT) */
+        #shop-section { display: none; width: 100%; }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .product-card {
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 20px;
+            transition: var(--transition);
+        }
+        .product-card:hover { border-color: var(--accent); transform: translateY(-10px); }
+        .product-card img { width: 100%; height: 350px; object-fit: cover; filter: grayscale(100%); transition: 0.6s; }
+        .product-card:hover img { filter: grayscale(0%); }
+
+        /* CHECKOUT MODAL */
+        #checkout-modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.95);
+            z-index: 100;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .timer { font-size: 3rem; font-weight: 100; color: var(--accent); margin: 20px 0; }
+
+        /* NOTIFICATIONS */
+        #status-msg { margin-top: 20px; font-size: 0.9rem; min-height: 1.5em; }
+        .error { color: var(--error); }
+
+        /* ANIMATIONS */
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .fade-in { animation: fadeIn 1s forwards; }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">GCHO <span class="lux-text">Collectif</span></div>
+        <div id="wallet-indicator">ETHEREUM DISCONNECTED</div>
+    </header>
+
+    <main>
+        <section id="auth-section" class="container fade-in">
+            <div class="glass-panel">
+                <span class="step-indicator">Gate 01 // Asset Verification</span>
+                <h1>Holder Access</h1>
+                <p style="margin: 20px 0; opacity: 0.7;">This storefront is exclusive to <span class="lux-text">CNP</span> and <span class="lux-text">LLAC</span> holders. Connect your Ethereum wallet to verify eligibility.</p>
+                <button class="btn" id="connect-eth-btn">Verify Holdings</button>
+                <div id="status-msg"></div>
+            </div>
+        </section>
+
+        <section id="shop-section" class="container fade-in">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <span class="step-indicator">Gate 02 // The Collection</span>
+                <h2>Verified Holder Store</h2>
+            </div>
+            
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&q=80&w=800" alt="Item">
+                    <h3 style="margin-top:15px">Genesis Hoodie (Physical)</h3>
+                    <p class="lux-text">5,000 $GCHO</p>
+                    <button class="btn" onclick="openCheckout(5000)">Acquire</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&q=80&w=800" alt="Item">
+                    <h3 style="margin-top:15px">LLAC Commemorative Cap</h3>
+                    <p class="lux-text">1,200 $GCHO</p>
+                    <button class="btn" onclick="openCheckout(1200)">Acquire</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="checkout-modal">
+        <div class="glass-panel" style="border: 1px solid var(--accent);">
+            <span class="step-indicator">Gate 03 // Solana Payment Flow</span>
+            <h2>Finalize Transaction</h2>
+            <p>Awaiting $GCHO transfer from Solana wallet.</p>
+            
+            <div class="timer" id="quote-timer">03:00</div>
+            
+            <div style="text-align: left; background: rgba(255,255,255,0.05); padding: 15px; margin: 20px 0; font-family: monospace; font-size: 0.8rem;">
+                Recipient: 8x3v...fR2n (Vault)<br>
+                Token: $GCHO<br>
+                Price: <span id="checkout-price"></span> 
+            </div>
+
+            <button class="btn" id="pay-sol-btn">Sign & Pay on Solana</button>
+            <button class="btn" style="border:none; font-size: 0.7rem;" onclick="closeCheckout()">Cancel</button>
+            <div id="payment-status"></div>
+        </div>
+    </div>
+
+    <script>
+        /**
+         * TECHNICAL MOCK FOR DEMO PURPOSES
+         * Mirrors the logic for Nonce -> Verification -> Quote -> Solana Transfer
+         */
+
+        const state = {
+            ethAddress: null,
+            solAddress: null,
+            isVerified: false,
+            quoteInterval: null
+        };
+
+        // UI Selectors
+        const authSection = document.getElementById('auth-section');
+        const shopSection = document.getElementById('shop-section');
+        const checkoutModal = document.getElementById('checkout-modal');
+        const statusMsg = document.getElementById('status-msg');
+        const ethBtn = document.getElementById('connect-eth-btn');
+        const walletIndicator = document.getElementById('wallet-indicator');
+
+        // PHASE 1: ETH AUTH MOCK
+        ethBtn.addEventListener('click', async () => {
+            ethBtn.innerText = "REQUESTING NONCE...";
+            ethBtn.disabled = true;
+
+            // 1. Simulate Fetching Nonce from Backend
+            await new Promise(r => setTimeout(r, 800));
+            statusMsg.innerText = "Signing Nonce: 7f8a-2c1b-99d0...";
+
+            // 2. Simulate User Signing
+            await new Promise(r => setTimeout(r, 1200));
+            
+            // 3. Simulate Backend Checking NFT Contract Address on ETH Mainnet
+            statusMsg.innerHTML = "Verifying CNP/LLAC Holdings...";
+            await new Promise(r => setTimeout(r, 1500));
+
+            // Success Transition
+            state.isVerified = true;
+            state.ethAddress = "0x71C...4921";
+            walletIndicator.innerText = `ETH: ${state.ethAddress} [VERIFIED]`;
+            
+            authSection.style.display = 'none';
+            shopSection.style.display = 'block';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // PHASE 2 & 3: QUOTE & SOLANA PAYMENT
+        function openCheckout(price) {
+            document.getElementById('checkout-price').innerText = `${price.toLocaleString()} $GCHO`;
+            checkoutModal.style.display = 'flex';
+            startQuoteTimer(180);
+        }
+
+        function closeCheckout() {
+            checkoutModal.style.display = 'none';
+            clearInterval(state.quoteInterval);
+        }
+
+        function startQuoteTimer(seconds) {
+            let timeLeft = seconds;
+            const display = document.getElementById('quote-timer');
+            
+            clearInterval(state.quoteInterval);
+            state.quoteInterval = setInterval(() => {
+                const mins = Math.floor(timeLeft / 60);
+                const secs = timeLeft % 60;
+                display.innerText = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+                
+                if (--timeLeft < 0) {
+                    clearInterval(state.quoteInterval);
+                    alert("409_QUOTE_EXPIRED: Please re-initiate checkout.");
+                    closeCheckout();
+                }
+            }, 1000);
+        }
+
+        document.getElementById('pay-sol-btn').addEventListener('click', async () => {
+            const btn = document.getElementById('pay-sol-btn');
+            const status = document.getElementById('payment-status');
+            
+            btn.innerText = "CONNECTING PHANTOM...";
+            btn.disabled = true;
+
+            // Simulate Solana Connection
+            await new Promise(r => setTimeout(r, 1000));
+            btn.innerText = "SIGNING SPL-TRANSFER...";
+            
+            // Simulate Payment Verification
+            await new Promise(r => setTimeout(r, 2000));
+            status.innerHTML = `<span style="color:var(--accent)">VERIFYING ON-CHAIN (FINALIZED)...</span>`;
+            
+            await new Promise(r => setTimeout(r, 1500));
+            
+            // Success
+            clearInterval(state.quoteInterval);
+            checkoutModal.innerHTML = `
+                <div class="glass-panel fade-in">
+                    <h2 style="color:var(--accent)">ORDER CONFIRMED</h2>
+                    <p style="margin:20px 0">Signature: 4vKz...9pQm</p>
+                    <p style="font-size:0.8rem; opacity:0.6">Proof of purchase stored on Solana. Check your email for shipment details.</p>
+                    <button class="btn" onclick="location.reload()">Return Home</button>
+                </div>
+            `;
+        });
+    </script>
+</body>
+</html>
